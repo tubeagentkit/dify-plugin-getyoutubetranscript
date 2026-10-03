@@ -1,0 +1,31 @@
+identity:
+  name: list_channel_videos
+  author: tubeagentkit
+  label:
+    en_US: List Channel Videos
+description:
+  human:
+    en_US: Lists a YouTube channel's videos, newest first, one page at a time.
+  llm: Lists the videos of a YouTube channel (by @handle, channel URL, or channel ID), newest first, one page at a time. Pass the previous response's continuation_token as continuation to get the next page. Useful before fetching transcripts for a whole channel.
+parameters:
+  - name: channel
+    type: string
+    required: true
+    label:
+      en_US: Channel
+    human_description:
+      en_US: Channel @handle, channel URL, or channel ID (UC...).
+    llm_description: The channel @handle, channel URL, or channel ID.
+    form: llm
+  - name: continuation
+    type: string
+    required: false
+    label:
+      en_US: Continuation Token
+    human_description:
+      en_US: The continuation token from a previous page, to get the next page.
+    llm_description: Optional continuation_token from a previous response, to fetch the next page.
+    form: llm
+extra:
+  python:
+    source: tools/list_channel_videos.py

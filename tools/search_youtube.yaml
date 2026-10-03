@@ -1,0 +1,48 @@
+identity:
+  name: search_youtube
+  author: tubeagentkit
+  label:
+    en_US: Search YouTube
+description:
+  human:
+    en_US: Searches YouTube for videos or channels.
+  llm: Searches YouTube for videos or channels matching a query and returns each result's title, video or channel ID, link, channel, views, length and upload date. Pass the previous response's continuation_token as page_token to get the next page.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query
+    human_description:
+      en_US: What to search for.
+    llm_description: The search query.
+    form: llm
+  - name: type
+    type: select
+    required: false
+    default: video
+    options:
+      - value: video
+        label:
+          en_US: Videos
+      - value: channel
+        label:
+          en_US: Channels
+    label:
+      en_US: Result Type
+    human_description:
+      en_US: Search for videos or channels.
+    llm_description: "'video' (default) or 'channel'."
+    form: llm
+  - name: page_token
+    type: string
+    required: false
+    label:
+      en_US: Page Token
+    human_description:
+      en_US: The continuation token from a previous search, to get the next page.
+    llm_description: Optional continuation_token from a previous search response, to fetch the next page.
+    form: llm
+extra:
+  python:
+    source: tools/search_youtube.py

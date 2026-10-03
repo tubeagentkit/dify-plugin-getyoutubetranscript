@@ -1,0 +1,30 @@
+identity:
+  author: "tubeagentkit"
+  name: "getyoutubetranscript"
+  label:
+    en_US: "GetYouTubeTranscript"
+  description:
+    en_US: "YouTube transcripts with optional timestamps, YouTube search, and channel video listings."
+  icon: "icon.png"
+  tags:
+    - videos
+    - search
+    - utilities
+credentials_for_provider:
+  api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: API Key
+    placeholder:
+      en_US: Enter your GetYouTubeTranscript API key
+    help:
+      en_US: Create an API key in your GetYouTubeTranscript dashboard. New accounts include free credits.
+    url: https://getyoutubetranscript.com/dashboard
+tools:
+  - tools/get_transcript.yaml
+  - tools/search_youtube.yaml
+  - tools/list_channel_videos.yaml
+extra:
+  python:
+    source: provider/getyoutubetranscript.py

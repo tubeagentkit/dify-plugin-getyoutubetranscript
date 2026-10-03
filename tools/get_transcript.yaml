@@ -1,0 +1,41 @@
+identity:
+  name: get_transcript
+  author: tubeagentkit
+  label:
+    en_US: Get Transcript
+description:
+  human:
+    en_US: Gets the transcript of a YouTube video, optionally with per-line timestamps.
+  llm: Retrieves the spoken text (captions) of a single YouTube video given its URL or 11-character ID, plus title and channel. Set timestamps to true to also get one {start, duration, text} segment per caption line, in seconds, for quoting or linking moments.
+parameters:
+  - name: video
+    type: string
+    required: true
+    label:
+      en_US: YouTube Video URL or ID
+    human_description:
+      en_US: A watch, youtu.be, Shorts, or live URL, or the 11-character video ID.
+    llm_description: The YouTube video URL or 11-character video ID.
+    form: llm
+  - name: language
+    type: string
+    required: false
+    label:
+      en_US: Language
+    human_description:
+      en_US: "Caption language code, e.g. 'en' or 'es'. Defaults to 'en'."
+    llm_description: "Optional caption language code such as 'en' or 'es'."
+    form: llm
+  - name: timestamps
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: Include Timestamps
+    human_description:
+      en_US: "Also return segments: one {start, duration, text} per caption line, times in seconds."
+    llm_description: Set to true to also return per-line segments with start and duration in seconds.
+    form: llm
+extra:
+  python:
+    source: tools/get_transcript.py

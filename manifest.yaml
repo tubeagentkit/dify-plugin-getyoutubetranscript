@@ -1,0 +1,28 @@
+version: 0.0.1
+type: plugin
+author: tubeagentkit
+name: getyoutubetranscript
+label:
+  en_US: GetYouTubeTranscript
+description:
+  en_US: YouTube transcripts with optional timestamps, YouTube search, and channel video listings.
+icon: icon.png
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+    - provider/getyoutubetranscript.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2026-10-04T03:04:34.581839+05:30
+privacy: PRIVACY.md
+verified: false
