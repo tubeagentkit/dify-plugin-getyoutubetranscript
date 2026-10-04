@@ -10,12 +10,12 @@ description:
 parameters:
   - name: channel
     type: string
-    required: true
+    required: false
     label:
       en_US: Channel
     human_description:
-      en_US: Channel @handle, channel URL, or channel ID (UC...).
-    llm_description: The channel @handle, channel URL, or channel ID.
+      en_US: Channel @handle, channel URL, or channel ID (UC...). Required unless a continuation token is given.
+    llm_description: The channel @handle, channel URL, or channel ID. Required for the first page; omit it when passing a continuation token.
     form: llm
   - name: continuation
     type: string

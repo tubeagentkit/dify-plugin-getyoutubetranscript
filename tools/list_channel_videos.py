@@ -10,6 +10,8 @@ from gyt_api import get
 class ListChannelVideosTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         continuation = tool_parameters.get("continuation")
+        if not continuation and not tool_parameters.get("channel"):
+            raise ValueError("Provide a channel for the first page, or a continuation token for later pages.")
         data = get(
             self.runtime.credentials["api_key"],
             "/channel/videos",
