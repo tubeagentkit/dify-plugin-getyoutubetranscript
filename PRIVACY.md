@@ -11,4 +11,4 @@ No other data is sent, and nothing is sent to any other third party.
 
 How GetYouTubeTranscript handles API requests is described in its privacy policy: https://getyoutubetranscript.com/privacy-policy
 
-Contact: hello@tubeagentkit.dev
+Contact: pantdeepakk5@gmail.com
